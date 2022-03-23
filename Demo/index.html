@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If-If else</title>
+</head>
+
+<body>
+    <script>
+        let inputName = prompt("Nhập tên người dùng:");
+        if (inputName = "admin") {
+            let password = prompt("Nhập password:");
+            if (password == "TheMaster")
+                alert('Welcome');
+            else if (password == ("")) {
+                alert('Canceled');
+            } else { alert('wrong password'); }
+        }
+        else if (inputName == "") {
+            alert('canceled')
+        } else {
+            alert("I don't know you");
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
