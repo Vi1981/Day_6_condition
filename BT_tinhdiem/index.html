@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính điểm đại học khối D</title>
+</head>
+
+<body>
+    <b>Tính Điểm đại học khối D</b>
+    <form action="form.php"></form>
+    <p>Môn Toán</p>
+    <input type="number" min="0" max="10"><br />
+    <p>Môn Văn</p>
+    <input type="number" min="0" max="10"><br />
+    <p>Môn Anh</p>
+    <input type="number" min="0" max="10"><br />
+    <p>Khu vực</p>
+    <select id="areaPoint" value="KV1">
+        <option value="0.75">KV1</option>
+        <option value="0.5">KV2</option>
+        <option value="0.25">KV2-NT</option>
+        <option value="0">KV3</option>
+
+    </select>
+    <button type="button" id='pointCal' onclick="calculation();">Tính điểm</button>
+    <div id="result">
+
+    </div>
+    <script>
+        let diemToan = document.getElementById('mathPoint');
+        let diemVan = document.getElementById('kokugoPoint');
+        let diemAnh = document.getElementById('engPoint');
+        let diemKV = document.getElementById('areaPoint');
+        let pointCal = document.getElementById('pointCal');
+        let result = document.getElementById('result');
+        let toan, van, anh, khuvuc;
+        diemToan.addEventListener('change', function () {
+            toan = parseFloat(diemToan.value);
+        });
+        diemVan.addEventListener('change', function () {
+            van = parseFloat(diemVan.value);
+        });
+        diemAnh.addEventListener('change', function () {
+            anh = parseFloat(diemAnh.value);
+        });
+        switch (diemKV) {
+            case 'KV1':
+                khuvuc = parseFloat(diemKV.value, 0.75);
+                break;
+            case 'KV2':
+                khuvuc = parseFloat(diemKV.value, 0.5);
+                break;
+            case 'KV2-NT':
+                khuvuc = parseFloat(diemKV.value, 0.25);
+                break;
+            default:
+                khuvuc = parseFloat(diemKV.value, 0);
+                break;
+
+        }
+        pointCal.addEventListener('change', function () {
+          result.innerText = "Tổng điểm DH khối D của bạn là:" + (toan + van + anh + khuvuc);
+
+        }
+        )
+
+    </script>
+</body>
+
+</html>

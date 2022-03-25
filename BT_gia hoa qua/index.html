@@ -9,47 +9,47 @@
 </head>
 
 <body>
-    //Ổi: 20000 VNĐ/kg
-    // Dưa Hấu: 20000 VNĐ/kg
-    //Táo: 30000 VNĐ/kg
-    // Xoài: 30000 VNĐ/kg
-    // Cam: 40000 VNĐ/kg
-    // Chôm Chôm: 40000 VNĐ/kg
-    // Măng Cụt: 50000 VNĐ/kg
-    <h1>Giá hoa quả</h1>
-    <input type="string" id="fruitName">
-    <button id="showPrice"> Xem giá </button> <br />
-   
+    <div class="card-m1"></div>
+    <div class="card-body">
+        <h1>Giá hoa quả</h1>
+        <form>
+            <select class="form-select" id="fruitName">
+                <option selected>Chọn loại trái cây</option>
+                <option value="duahau">Dưa hấu</option>
+                <option value="oi">Ổi</option>
+                <option value="xoai">Xoài</option>
+                <option value="tao">Táo</option>
+                <option value="cam">Cam</option>
+                <option value="chomchom">Chôm chôm</option>
+                <option value="mangcut">Măng cụt</option>
+            </select>
+            <p id="showPrice" class="my_5"></p>
+
+        </form>
+    </div>
+    </div>
     <script>
         let tenhoaqua = document.getElementById("fruitName");
         let giatien = document.getElementById("showPrice");
-       
-        giatien.addEventListener('click', function () {
-            switch (tenhoaqua) {
-                case 'ổi':
-                case 'dưa hấu':
-                    giatien == 20000 + "VND/kg";
+        tenhoaqua.addEventListener('change', function () {
+            switch (tenhoaqua.value) {
+                case 'oi':
+                case 'dua hau':
+                    giatien.innerText = " 20,000 VND/kg";
                     break;
-                case 'táo':
-                case 'xoài':
-                    giatien == 30000 + "VND/kg";
+                case 'tao':
+                case 'xoai':
+                    giatien.innerText = " 30,000 VND/kg";
                     break;
                 case 'cam':
-                case 'chôm chôm':
-                    giatien == 40000 + "VND/kg";
+                case 'chomchom':
+                    giatien.innerText = " 40,000 VND/kg";
                     break;
-                case 'măng cụt':  
-                    giatien == 50000 + "VND/kg"   
-                break;  
-
+                case 'mangcut':
+                    giatien.innerText = " 50,000 VND/kg";
+                    break;
             }
-            
-        }
-        )
-        document.write(giatien);
-
-
-
+        });
     </script>
 </body>
 
